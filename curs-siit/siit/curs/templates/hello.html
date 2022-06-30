@@ -1,0 +1,46 @@
+<html>
+    <body>
+        {% if request.user.is_authenticated %}
+          Salut, {{ request.user.first_name }} {{ request.user.last_name}}!
+        {% else %}
+          Neautentificat
+        {% endif %}
+        <br />
+        {{ string | lower }}
+        <br />
+        {{ lista.1 }}
+        <br />
+        {% comment %}
+        {{ lista.50 }} <!-- lista[50]-->
+        {% endcomment %}
+
+        <br />
+        {{ dictionar }}
+        <br />
+        {{ dictionar.unu | add:"5"}} <!-- dictionar["unu"] -->
+        <br />
+        {{ dictionar.trei}} <!-- dictionar["trei"]-->
+        <br />
+        {{ dictionar.dict2.cheie }}
+        <br />
+        {{ functie }}
+        <br />
+        {{ obiect.proprietate }}
+        <br />
+        {{ obiect.id }}
+        <br />
+
+        {{ time |date:"dd D m M Y" }}
+
+
+        {{ cheie |default:"Nu exista"}}
+        
+        {% if cheie %} 
+          {{ cheie }}
+        {% else %}
+          Nu exista
+        {% endif %}
+        <br />
+        {{ lista|first|default:"Nimic"}}
+    </body>
+</html>

@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+        <div>
+           Lista Studenti 
+           <ol>
+           {% for student in studenti %}
+              <li>{{ student.nume }} {{ student.prenume }}</li>
+           {% empty %}
+              <li> Nu sunt studenti</li>
+           {% endfor %}
+           </ol>
+        </div>
+        <div>
+            {{ mesaj }}
+        </div>
+{% endblock %}
